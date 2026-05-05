@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Presupuesto — Elite Construction Hub</title>
+  <meta name="description" content="Solicita tu presupuesto gratuito sin compromiso. Rellena el formulario y te respondemos en menos de 24 horas.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo"><span class="logo-main">ELITE<span>.</span></span><span class="logo-sub">Construction Hub</span></a>
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li><li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="proceso.html">Proceso</a></li><li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <a href="presupuesto.html" class="btn btn-primary btn-sm">Solicitar Presupuesto</a>
+        </nav>
+        <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a>
+    <a href="nosotros.html">Nosotros</a><a href="proceso.html">Proceso</a><a href="blog.html">Blog</a>
+    <a href="contacto.html">Contacto</a><a href="faq.html">FAQ</a>
+    <a href="presupuesto.html" class="btn btn-primary">Solicitar Presupuesto</a>
+  </nav>
+
+  <main>
+    <div class="hero-small">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">Inicio</a><span class="breadcrumb-sep">/</span><span>Presupuesto</span></nav>
+        <h1>Solicitar Presupuesto</h1>
+        <p>Gratuito, sin compromiso. Te respondemos en menos de 24 horas laborables.</p>
+      </div>
+    </div>
+
+    <section class="section presupuesto-section">
+      <div class="container">
+        <div class="presupuesto-grid">
+
+          <!-- FORM -->
+          <div>
+            <!-- Success Message -->
+            <div class="form-success-msg" style="display:none; margin-bottom:24px;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <div><strong>¡Solicitud enviada!</strong> Nos pondremos en contacto contigo en menos de 24 horas.</div>
+            </div>
+
+            <div class="form-wrapper">
+              <!-- Progress -->
+              <div class="progress-header">
+                <div class="progress-steps">
+                  <div class="progress-step-item active">
+                    <div class="progress-dot">1</div>
+                    <div class="progress-line"></div>
+                  </div>
+                  <div class="progress-step-item">
+                    <div class="progress-dot">2</div>
+                    <div class="progress-line"></div>
+                  </div>
+                  <div class="progress-step-item">
+                    <div class="progress-dot">3</div>
+                    <div class="progress-line"></div>
+                  </div>
+                  <div class="progress-step-item">
+                    <div class="progress-dot">4</div>
+                  </div>
+                </div>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar-fill" style="width:0%"></div>
+                </div>
+              </div>
+
+              <form class="multistep-form" novalidate>
+
+                <!-- STEP 1: Datos personales -->
+                <div class="form-step active">
+                  <h3 class="step-title">Tus datos de contacto</h3>
+                  <p class="step-desc">Para poder enviarte el presupuesto y contactarte.</p>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="nombre">Nombre *</label>
+                      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                      <span class="form-error">Por favor, introduce tu nombre.</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="apellidos">Apellidos *</label>
+                      <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+                      <span class="form-error">Por favor, introduce tus apellidos.</span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="email">Email *</label>
+                      <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                      <span class="form-error">Introduce un email válido.</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="telefono">Teléfono *</label>
+                      <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required>
+                      <span class="form-error">Por favor, introduce tu teléfono.</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="empresa">Empresa (opcional)</label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa">
+                  </div>
+                  <div class="form-nav">
+                    <span></span>
+                    <button type="button" class="btn btn-primary" data-next>Siguiente: Tu proyecto &rarr;</button>
+                  </div>
+                </div>
+
+                <!-- STEP 2: Tipo de proyecto -->
+                <div class="form-step">
+                  <h3 class="step-title">Tu proyecto</h3>
+                  <p class="step-desc">Cuéntanos qué tipo de proyecto necesitas.</p>
+
+                  <div class="form-group">
+                    <label for="tipo-servicio">Tipo de servicio *</label>
+                    <select id="tipo-servicio" name="tipo-servicio" required>
+                      <option value="">-- Selecciona un servicio --</option>
+                      <option value="obra-nueva">Obra Nueva Residencial</option>
+                      <option value="comercial">Construcción Comercial</option>
+                      <option value="reforma">Reforma Integral</option>
+                      <option value="rehabilitacion">Rehabilitación de Edificio</option>
+                      <option value="interiorismo">Interiorismo y Diseño</option>
+                      <option value="gestion">Gestión de Proyectos</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    <span class="form-error">Por favor, selecciona un tipo de servicio.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="ubicacion">Ubicación del proyecto *</label>
+                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad, provincia..." required>
+                    <span class="form-error">Indica la ubicación del proyecto.</span>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="superficie">Superficie aproximada (m²)</label>
+                      <input type="number" id="superficie" name="superficie" placeholder="Ej: 120">
+                    </div>
+                    <div class="form-group">
+                      <label for="plantas">Número de plantas</label>
+                      <select id="plantas" name="plantas">
+                        <option value="">-- Selecciona --</option>
+                        <option>1 planta</option>
+                        <option>2 plantas</option>
+                        <option>3 plantas</option>
+                        <option>Más de 3 plantas</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline" data-prev>&larr; Anterior</button>
+                    <button type="button" class="btn btn-primary" data-next>Siguiente: Detalles &rarr;</button>
+                  </div>
+                </div>
+
+                <!-- STEP 3: Detalles -->
+                <div class="form-step">
+                  <h3 class="step-title">Detalles del proyecto</h3>
+                  <p class="step-desc">Más información nos permite preparar un presupuesto más preciso.</p>
+
+                  <div class="form-group">
+                    <label for="presupuesto-aprox">Presupuesto orientativo</label>
+                    <select id="presupuesto-aprox" name="presupuesto-aprox">
+                      <option value="">-- Selecciona un rango --</option>
+                      <option>Menos de 30.000€</option>
+                      <option>30.000€ – 75.000€</option>
+                      <option>75.000€ – 150.000€</option>
+                      <option>150.000€ – 300.000€</option>
+                      <option>Más de 300.000€</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="plazo">Plazo deseado de inicio</label>
+                    <select id="plazo" name="plazo">
+                      <option value="">-- ¿Cuándo quieres empezar? --</option>
+                      <option>Lo antes posible</option>
+                      <option>En 1-3 meses</option>
+                      <option>En 3-6 meses</option>
+                      <option>Más adelante (explorando opciones)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcion">Descripción del proyecto *</label>
+                    <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos brevemente qué tienes en mente. Cuanta más información, mejor presupuesto podemos preparar." required style="min-height:120px"></textarea>
+                    <span class="form-error">Por favor, describe tu proyecto.</span>
+                  </div>
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline" data-prev>&larr; Anterior</button>
+                    <button type="button" class="btn btn-primary" data-next>Siguiente: Confirmar &rarr;</button>
+                  </div>
+                </div>
+
+                <!-- STEP 4: Confirmar -->
+                <div class="form-step">
+                  <h3 class="step-title">¡Casi listo!</h3>
+                  <p class="step-desc">Revisa tus datos y envía la solicitud. Te respondemos en menos de 24 horas laborables.</p>
+
+                  <div class="form-group">
+                    <label for="como-conociste">¿Cómo nos conociste?</label>
+                    <select id="como-conociste" name="como-conociste">
+                      <option value="">-- Selecciona --</option>
+                      <option>Google / Buscador</option>
+                      <option>Recomendación de un conocido</option>
+                      <option>Redes sociales</option>
+                      <option>Publicidad online</option>
+                      <option>Ya soy cliente</option>
+                      <option>Otro</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label style="display:flex; align-items:flex-start; gap:10px; font-weight:400; cursor:pointer;">
+                      <input type="checkbox" required style="width:auto; margin-top:3px; accent-color:var(--color-accent)">
+                      <span>He leído y acepto la <a href="#" style="color:var(--color-accent)">Política de Privacidad</a> y el tratamiento de mis datos para el envío del presupuesto solicitado. *</span>
+                    </label>
+                    <span class="form-error">Debes aceptar la política de privacidad.</span>
+                  </div>
+
+                  <div style="background:rgba(212,137,26,0.06); border:1px solid rgba(212,137,26,0.2); border-radius:var(--radius); padding:20px; margin-bottom:24px;">
+                    <p style="font-size:0.875rem; color:var(--color-dark); font-weight:500; margin-bottom:8px;">
+                      <svg width="16" height="16" fill="none" stroke="var(--color-accent)" stroke-width="2" viewBox="0 0 24 24" style="display:inline; vertical-align:middle; margin-right:6px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                      ¿Qué pasa después?
+                    </p>
+                    <p style="font-size:0.875rem; color:var(--color-gray)">Un consultor de Elite Construction te llamará en las próximas 24 horas para concretar los detalles y organizar una visita gratuita al proyecto si es necesario.</p>
+                  </div>
+
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline" data-prev>&larr; Anterior</button>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                      Enviar solicitud
+                    </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="presupuesto-sidebar">
+            <div class="sidebar-info-card fade-in">
+              <h3>¿Por qué elegirnos?</h3>
+              <p>Más de 350 clientes ya confiaron en nosotros. Aquí algunas razones:</p>
+              <div class="sidebar-benefits">
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Presupuesto detallado sin costes ocultos
+                </div>
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Respuesta garantizada en 24 horas
+                </div>
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Visita gratuita a tu proyecto
+                </div>
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Sin compromiso de contratación
+                </div>
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  20 años de experiencia y reputación
+                </div>
+                <div class="sidebar-benefit">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Garantía estructural de 10 años
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-quick-card fade-in fade-in-delay-1">
+              <h4>¿Prefieres llamarnos?</h4>
+              <div class="quick-contact-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" color="var(--color-accent)"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <span>+34 91 234 56 78</span>
+              </div>
+              <div class="quick-contact-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" color="var(--color-accent)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>presupuestos@eliteconstructionhub.es</span>
+              </div>
+              <div class="quick-contact-item">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" color="var(--color-accent)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Lun–Vie: 8:00–18:00</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><div class="container"><div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-logo"><span class="logo-main">ELITE<span>.</span></span><span class="logo-sub">Construction Hub</span></a><p>Más de 20 años construyendo con excelencia.</p></div>
+      <div class="footer-col"><h4>Servicios</h4><ul class="footer-links"><li><a href="servicios.html">Obra Nueva</a></li><li><a href="servicios.html">Reformas</a></li><li><a href="servicios.html">Rehabilitación</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul class="footer-links"><li><a href="nosotros.html">Nosotros</a></li><li><a href="proceso.html">Proceso</a></li><li><a href="proyectos.html">Portfolio</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><div class="footer-contact-info"><div class="contact-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>+34 91 234 56 78</span></div></div></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><p>&copy; 2025 Elite Construction Hub.</p><div class="footer-bottom-links"><a href="#">Aviso Legal</a><a href="#">Privacidad</a></div></div></div></div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos — Elite Construction Hub</title>
+  <meta name="description" content="Portfolio de proyectos de Elite Construction Hub. Obra nueva residencial, comercial, reformas y rehabilitación.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-main">ELITE<span>.</span></span>
+          <span class="logo-sub">Construction Hub</span>
+        </a>
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html" class="active">Proyectos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="proceso.html">Proceso</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <a href="presupuesto.html" class="btn btn-primary btn-sm">Solicitar Presupuesto</a>
+        </nav>
+        <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="proyectos.html">Proyectos</a>
+    <a href="nosotros.html">Nosotros</a><a href="proceso.html">Proceso</a><a href="blog.html">Blog</a>
+    <a href="contacto.html">Contacto</a><a href="faq.html">FAQ</a>
+    <a href="presupuesto.html" class="btn btn-primary">Solicitar Presupuesto</a>
+  </nav>
+
+  <main>
+    <div class="hero-small">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">Inicio</a><span class="breadcrumb-sep">/</span><span>Proyectos</span></nav>
+        <h1>Nuestro Portfolio</h1>
+        <p>350+ proyectos completados. Cada uno, una historia de confianza y excelencia.</p>
+      </div>
+    </div>
+
+    <section class="section" style="background:var(--color-bg-main)">
+      <div class="container">
+        <div class="portfolio-filters fade-in">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="residencial">Residencial</button>
+          <button class="filter-btn" data-filter="comercial">Comercial</button>
+          <button class="filter-btn" data-filter="reforma">Reformas</button>
+          <button class="filter-btn" data-filter="rehabilitacion">Rehabilitación</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <div class="portfolio-item fade-in" data-category="residencial">
+            <div class="portfolio-img">
+              <img src="images/original/proyecto-residencial-alpha.jpg" alt="Residencial Las Palmas" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Residencial</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Residencial Las Palmas</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Residencial Las Palmas</h3>
+              <p>Madrid · 2023 · 24 viviendas con zonas comunes</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-1" data-category="comercial">
+            <div class="portfolio-img">
+              <img src="images/original/industrial-setup.jpg" alt="Torre Azul Oficinas" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Comercial</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Torre Azul Oficinas</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Torre Azul — Oficinas</h3>
+              <p>Barcelona · 2024 · Hub tecnológico 2.400 m²</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-2" data-category="residencial">
+            <div class="portfolio-img">
+              <img src="images/original/hero-architecture.jpg" alt="Villa Sierra" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Residencial</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Villa Sierra</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Villa Sierra — Unifamiliar</h3>
+              <p>Guadalajara · 2024 · 480 m² con piscina y spa</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in" data-category="reforma">
+            <div class="portfolio-img">
+              <img src="images/original/similar-1.jpg" alt="Reforma Chamartín" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Reforma</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Reforma Chamartín</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Reforma Integral Chamartín</h3>
+              <p>Madrid · 2023 · Piso 180 m² reforma completa</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-1" data-category="rehabilitacion">
+            <div class="portfolio-img">
+              <img src="images/original/similar-2.jpg" alt="Palacio Vintage" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Rehabilitación</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Palacio Vintage</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Palacio Vintage — Hotel Boutique</h3>
+              <p>Toledo · 2022 · Edificio s.XIX · 32 habitaciones</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-2" data-category="comercial">
+            <div class="portfolio-img">
+              <img src="images/original/gallery-1.jpg" alt="Restaurante Alma" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Comercial</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Restaurante Alma</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Restaurante Alma</h3>
+              <p>Madrid · 2023 · Local gastronómico 320 m²</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in" data-category="residencial">
+            <div class="portfolio-img">
+              <img src="images/original/gallery-2.jpg" alt="Urbanización Verde" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Residencial</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Urbanización Verde</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Urbanización Verde</h3>
+              <p>Alcobendas · 2022 · 48 adosados con zonas verdes</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-1" data-category="reforma">
+            <div class="portfolio-img">
+              <img src="images/original/gallery-3.jpg" alt="Local Boutique" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Reforma</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Local Boutique</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Local Boutique Fashion</h3>
+              <p>Barcelona · 2024 · Acondicionamiento 95 m²</p>
+            </div>
+          </div>
+
+          <div class="portfolio-item fade-in fade-in-delay-2" data-category="rehabilitacion">
+            <div class="portfolio-img">
+              <img src="images/original/gallery-4.jpg" alt="Edificio Alcalá" onerror="this.style.display='none'">
+              <span class="portfolio-cat">Rehabilitación</span>
+              <div class="portfolio-overlay">
+                <span style="color:white; font-family:var(--font-serif); font-size:1.1rem; font-weight:700;">Edificio Alcalá</span>
+                <a href="#" class="btn btn-outline-white btn-sm">Ver detalles</a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Edificio Alcalá — Fachada</h3>
+              <p>Madrid · 2023 · Rehabilitación fachada y cubierta</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="background:var(--color-dark); text-align:center;">
+      <div class="container">
+        <h2 style="color:white; margin-bottom:16px;">¿Tu proyecto podría ser el próximo?</h2>
+        <p style="color:rgba(255,255,255,0.6); font-size:1.125rem; max-width:520px; margin:0 auto 40px;">Cuéntanos qué tienes en mente y te preparamos una propuesta personalizada.</p>
+        <a href="presupuesto.html" class="btn btn-primary btn-lg">Solicitar Presupuesto Gratis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><div class="container"><div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo"><span class="logo-main">ELITE<span>.</span></span><span class="logo-sub">Construction Hub</span></a>
+        <p>Más de 20 años construyendo con excelencia, precisión y honestidad.</p>
+      </div>
+      <div class="footer-col"><h4>Servicios</h4><ul class="footer-links"><li><a href="servicios.html">Obra Nueva</a></li><li><a href="servicios.html">Reformas</a></li><li><a href="servicios.html">Rehabilitación</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul class="footer-links"><li><a href="nosotros.html">Nosotros</a></li><li><a href="proceso.html">Proceso</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><div class="footer-contact-info"><div class="contact-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span>+34 91 234 56 78</span></div></div></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner"><p>&copy; 2025 Elite Construction Hub.</p><div class="footer-bottom-links"><a href="#">Aviso Legal</a><a href="#">Privacidad</a></div></div></div></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
