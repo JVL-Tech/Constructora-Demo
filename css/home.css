@@ -440,110 +440,98 @@
    TESTIMONIALS
    ============================================================ */
 
-.testimonials-section { background: var(--color-white); }
+.testimonials-section { background: var(--color-bg-main); }
 
-.testimonials-carousel {
-  max-width: 860px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.testimonials-track { position: relative; }
-
-.testimonial-card {
-  display: none;
-  text-align: center;
-  padding: 40px 56px;
-}
-
-.testimonial-card.active { display: block; }
-
-.testimonial-stars {
-  color: var(--color-accent);
-  font-size: 1.25rem;
-  letter-spacing: 4px;
-  margin-bottom: 24px;
-}
-
-.testimonial-text {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: var(--color-dark);
-  line-height: 1.75;
-  font-style: italic;
-  margin-bottom: 36px;
-}
-
-.testimonial-author {
+/* Resumen rating Google */
+.google-rating-summary {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
 }
-
-.author-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--color-accent), #8B5E12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.grs-score {
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 1.25rem;
+  color: var(--color-dark);
+}
+.grs-stars {
+  color: #FBBC04;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.grs-count {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+/* Grid de cards Google */
+.google-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.greview-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 1px solid var(--color-gray-lt);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.greview-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.greview-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.greview-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
   flex-shrink: 0;
 }
 
-.author-info { text-align: left; }
-.author-name { font-weight: 700; color: var(--color-dark); font-size: 0.9375rem; }
-.author-role { font-size: 0.8125rem; color: var(--color-gray); }
-
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-top: 32px;
-}
-
-.carousel-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--color-gray-lt);
-  background: var(--color-white);
+.greview-name {
+  font-weight: 600;
+  font-size: 0.9rem;
   color: var(--color-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
+}
+.greview-date {
+  font-size: 0.78rem;
+  color: var(--color-gray);
+  margin-top: 2px;
 }
 
-.carousel-btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+.greview-stars {
+  color: #FBBC04;
+  font-size: 1rem;
+  letter-spacing: 2px;
 }
 
-.carousel-dots { display: flex; gap: 8px; }
-
-.carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-gray-lt);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  padding: 0;
-}
-
-.carousel-dot.active {
-  background: var(--color-accent);
-  width: 24px;
-  border-radius: 4px;
+.greview-text {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  line-height: 1.65;
+  flex: 1;
 }
 
 /* ============================================================
@@ -551,7 +539,7 @@
    ============================================================ */
 
 .clients-section {
-  background: var(--color-bg-main);
+  background: var(--color-dark);
   padding: 48px 0;
 }
 
@@ -561,7 +549,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-gray);
+  color: rgba(255,255,255,0.45);
   margin-bottom: 32px;
 }
 
@@ -570,19 +558,26 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 48px;
+  gap: 16px 32px;
 }
 
 .client-logo {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--color-gray-lt);
-  letter-spacing: 0.05em;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 20px;
+  border-radius: 999px;
   transition: var(--transition);
 }
 
-.client-logo:hover { color: var(--color-gray); }
+.client-logo:hover {
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.45);
+}
 
 /* ============================================================
    CTA BANNER
@@ -625,6 +620,7 @@
 }
 
 @media (max-width: 768px) {
+  .google-reviews-grid { grid-template-columns: 1fr; }
   .metrics-inner { grid-template-columns: repeat(2,1fr); }
   .metric-item {
     padding: 28px 16px;
@@ -635,6 +631,10 @@
   .process-steps  { grid-template-columns: 1fr; gap: 24px; }
   .projects-grid  { grid-template-columns: 1fr; }
   .testimonial-card { padding: 24px 16px; }
+}
+
+@media (max-width: 1024px) {
+  .google-reviews-grid { grid-template-columns: repeat(2,1fr); }
 }
 
 @media (max-width: 480px) {
