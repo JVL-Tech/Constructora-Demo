@@ -205,6 +205,25 @@ p {
 .btn-sm  { padding: 10px 20px; font-size: 0.875rem; }
 .btn-lg  { padding: 16px 36px; font-size: 1rem; }
 
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: gap 0.3s;
+}
+.service-link:hover { gap: 10px; }
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 /* ============================================================
    CARDS
    ============================================================ */
@@ -411,4 +430,6 @@ p {
   .btn    { padding: 12px 22px; font-size: 0.875rem; }
   .btn-lg { padding: 14px 28px; }
   .grid-4 { grid-template-columns: 1fr; }
+  .btn-group { flex-direction: column; }
+  .btn-group .btn { justify-content: center; width: 100%; }
 }
