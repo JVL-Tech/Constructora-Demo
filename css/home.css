@@ -531,7 +531,12 @@
   font-size: 0.9rem;
   color: var(--color-gray);
   line-height: 1.65;
-  flex: 1;
+}
+
+/* Animación fade entre reseñas */
+@keyframes greview-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ============================================================
@@ -609,6 +614,7 @@
    ============================================================ */
 
 @media (max-width: 1024px) {
+  .google-reviews-grid { grid-template-columns: repeat(2,1fr); }
   .services-grid   { grid-template-columns: repeat(2,1fr); }
   .process-steps   { grid-template-columns: repeat(2,1fr); }
   .process-steps::before { display: none; }
@@ -654,9 +660,20 @@
 
 @media (max-width: 768px) {
   /* Carrusel: ocultar todas las cards salvo la activa */
-  .google-reviews-grid { grid-template-columns: 1fr; }
-  .google-reviews-grid .greview-card { display: none; }
-  .google-reviews-grid .greview-card.greview-active { display: flex; }
+  .google-reviews-grid {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+  .google-reviews-grid .greview-card {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .google-reviews-grid .greview-card.greview-active {
+    display: flex;
+    animation: greview-fade 0.4s ease forwards;
+    padding: 24px 20px;
+  }
   .metrics-inner { grid-template-columns: repeat(2,1fr); }
   .metric-item {
     padding: 28px 16px;
@@ -669,9 +686,6 @@
   .testimonial-card { padding: 24px 16px; }
 }
 
-@media (max-width: 1024px) {
-  .google-reviews-grid { grid-template-columns: repeat(2,1fr); }
-}
 
 @media (max-width: 480px) {
   .hero-actions { flex-direction: column; }

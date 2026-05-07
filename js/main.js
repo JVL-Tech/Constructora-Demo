@@ -203,7 +203,16 @@
   function goTo(i) {
     current = (i + cards.length) % cards.length;
     if (MOBILE()) {
-      cards.forEach((c, idx) => c.classList.toggle('greview-active', idx === current));
+      cards.forEach((c, idx) => {
+        if (idx === current) {
+          // Re-disparar animación quitando y volviendo a poner la clase
+          c.classList.remove('greview-active');
+          void c.offsetWidth; // reflow para reiniciar animation
+          c.classList.add('greview-active');
+        } else {
+          c.classList.remove('greview-active');
+        }
+      });
     } else {
       cards.forEach(c => c.classList.remove('greview-active'));
     }
