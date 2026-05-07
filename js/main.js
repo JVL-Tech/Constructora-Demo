@@ -23,18 +23,71 @@
   const mobileNav = document.querySelector('.mobile-nav');
   if (!hamburger || !mobileNav) return;
 
+  // Crear overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'mobile-overlay';
+  document.body.appendChild(overlay);
+
+  // Reestructurar contenido del nav: cabecera + links + footer (botón CTA)
+  const originalLinks = Array.from(mobileNav.children);
+  const ctaBtn = originalLinks.find(el => el.classList.contains('btn'));
+  const links = originalLinks.filter(el => !el.classList.contains('btn'));
+
+  mobileNav.innerHTML = '';
+
+  // Cabecera con logo y botón cerrar
+  const navHeader = document.createElement('div');
+  navHeader.className = 'mobile-nav-header';
+  const headerLogo = document.querySelector('.logo');
+  if (headerLogo) {
+    const logoClone = headerLogo.cloneNode(true);
+    navHeader.appendChild(logoClone);
+  }
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'mobile-nav-close';
+  closeBtn.setAttribute('aria-label', 'Cerrar menú');
+  closeBtn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  navHeader.appendChild(closeBtn);
+  mobileNav.appendChild(navHeader);
+
+  // Links
+  const linksWrap = document.createElement('div');
+  linksWrap.className = 'mobile-nav-links';
+  links.forEach(el => linksWrap.appendChild(el));
+  mobileNav.appendChild(linksWrap);
+
+  // Footer con CTA
+  if (ctaBtn) {
+    const navFooter = document.createElement('div');
+    navFooter.className = 'mobile-nav-footer';
+    navFooter.appendChild(ctaBtn);
+    mobileNav.appendChild(navFooter);
+  }
+
+  // Toggle
+  function openNav() {
+    mobileNav.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNav() {
+    mobileNav.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    mobileNav.classList.contains('open') ? closeNav() : openNav();
   });
 
+  closeBtn.addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
+
   mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeNav);
   });
 })();
 
