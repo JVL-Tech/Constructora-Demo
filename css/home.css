@@ -619,8 +619,44 @@
   .why-badge { left: auto; right: 32px; bottom: -24px; }
 }
 
+/* Controles carrusel reviews (ocultos en desktop, visibles en móvil vía JS) */
+.greview-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.greview-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gray-lt);
+  background: var(--color-white);
+  color: var(--color-dark);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.greview-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.greview-dots { display: flex; gap: 6px; align-items: center; }
+.greview-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--color-gray-lt);
+  border: none; padding: 0; cursor: pointer;
+  transition: var(--transition);
+}
+.greview-dot.active {
+  background: var(--color-accent);
+  width: 20px;
+  border-radius: 4px;
+}
+
 @media (max-width: 768px) {
+  /* Carrusel: ocultar todas las cards salvo la activa */
   .google-reviews-grid { grid-template-columns: 1fr; }
+  .google-reviews-grid .greview-card { display: none; }
+  .google-reviews-grid .greview-card.greview-active { display: flex; }
   .metrics-inner { grid-template-columns: repeat(2,1fr); }
   .metric-item {
     padding: 28px 16px;

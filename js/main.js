@@ -158,39 +158,90 @@
 })();
 
 /* ============================================================
-   TESTIMONIAL CAROUSEL
+   GOOGLE REVIEWS — CARRUSEL EN MÓVIL
    ============================================================ */
 (function () {
-  const track   = document.querySelector('.testimonials-track');
-  if (!track) return;
+  const grid = document.querySelector('.google-reviews-grid');
+  if (!grid) return;
 
-  const slides  = Array.from(track.querySelectorAll('.testimonial-card'));
-  const prevBtn = document.querySelector('.carousel-prev');
-  const nextBtn = document.querySelector('.carousel-next');
-  const dots    = Array.from(document.querySelectorAll('.carousel-dot'));
-  let   current = 0;
-  let   timer;
+  const cards = Array.from(grid.querySelectorAll('.greview-card'));
+  if (cards.length < 2) return;
+
+  // Crear controles
+  const controls = document.createElement('div');
+  controls.className = 'greview-controls';
+
+  const prevBtn = document.createElement('button');
+  prevBtn.className = 'greview-btn';
+  prevBtn.setAttribute('aria-label', 'Anterior');
+  prevBtn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>';
+
+  const dotsWrap = document.createElement('div');
+  dotsWrap.className = 'greview-dots';
+  const dots = cards.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'greview-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Reseña ' + (i + 1));
+    dotsWrap.appendChild(d);
+    return d;
+  });
+
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'greview-btn';
+  nextBtn.setAttribute('aria-label', 'Siguiente');
+  nextBtn.innerHTML = '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>';
+
+  controls.appendChild(prevBtn);
+  controls.appendChild(dotsWrap);
+  controls.appendChild(nextBtn);
+  grid.parentElement.appendChild(controls);
+
+  let current = 0;
+  let timer;
+  const MOBILE = () => window.innerWidth <= 768;
 
   function goTo(i) {
-    slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
-    dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
-    current = i;
+    current = (i + cards.length) % cards.length;
+    if (MOBILE()) {
+      cards.forEach((c, idx) => c.classList.toggle('greview-active', idx === current));
+    } else {
+      cards.forEach(c => c.classList.remove('greview-active'));
+    }
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
   }
-
-  function next() { goTo((current + 1) % slides.length); }
-  function prev() { goTo((current - 1 + slides.length) % slides.length); }
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(next, 5000);
+    timer = setInterval(() => goTo(current + 1), 4000);
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetTimer(); });
-  if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetTimer(); });
-  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); resetTimer(); }));
+  prevBtn.addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+  nextBtn.addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+  dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); resetTimer(); }));
 
-  goTo(0);
-  resetTimer();
+  // Swipe táctil
+  let startX = 0;
+  grid.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  grid.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetTimer(); }
+  }, { passive: true });
+
+  // Init y resize
+  function init() {
+    if (MOBILE()) {
+      goTo(current);
+      controls.style.display = 'flex';
+      resetTimer();
+    } else {
+      clearInterval(timer);
+      cards.forEach(c => c.classList.remove('greview-active'));
+      controls.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('resize', init);
+  init();
 })();
 
 /* ============================================================
